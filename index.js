@@ -40,8 +40,8 @@ const questions = [
             message: "What type of license would you like?",
             name: "license",
             choices: [
-                "Apache License 2.0",
-                "GNU GPLv3",
+                "Apache",
+                "GNU",
                 "MIT",
                 "ISC",
                 "None"
@@ -73,13 +73,18 @@ const questions = [
 ];
 
 // TODO: Create a function to write README file
-function writeToFile(fileName, data) {}
+function writeToFile(fileName, data) {
+    fs.writeFile(fileName, `${data}`,(err) =>
+    err ? console.log(err) : console.log('Success!') )
+}
 
 // TODO: Create a function to initialize app
 function init() {
 inquirer.prompt(questions).then((response) => {
     console.log(response)
     generateMarkdown(response)
+   writeToFile(data)
+   console.log(writeToFile(data))
 })
 }
 
