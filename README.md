@@ -11,9 +11,6 @@ video that showcase the utilization of the app
 
 ##Links
 
-* URL of the deployed application
-
-
 * URL of github repository
  
  https://github.com/Chrisolsen1993/Readme-Generator
