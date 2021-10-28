@@ -48,13 +48,10 @@ const questions = [
             ]
         },
         {
-            type: "list",
-            message: "Would you like other developers to contribute to your project?",
+            type: "input",
+            message: "How would you like to contribute?",
             name: "contributors",
-            choices: [
-                "Yes",
-                "No"
-            ]
+            
         },
         {
             type: "input",

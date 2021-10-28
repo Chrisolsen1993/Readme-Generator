@@ -8,7 +8,11 @@ function renderLicenseBadge(license) {
     return "![GNU](/assets/GNU.svg)";
   } else if (license === "MIT") {
     return "![MIT](/assets/MIT.svg)";
-  } else {
+  } 
+  else if (license === "None"){
+    return ""
+  }
+  else {
     return "![ISC](/assets/ISC.svg)";
   }
 
@@ -16,7 +20,25 @@ function renderLicenseBadge(license) {
 
 // TODO: Create a function that returns the license link
 // If there is no license, return an empty string
-function renderLicenseLink(license) {}
+function renderLicenseLink(license) {
+  if (license === "Apache") {
+    return "[Apache](https://opensource.org/licenses/Apache-2.0)";
+  } else if (license === "GNU") {
+    return "[GNU](https://www.gnu.org/licenses/gpl-3.0)";
+  } else if (license === "MIT") {
+    return "[MIT](https://opensource.org/licenses/MIT)";
+  } 
+  else if (license === "None"){
+    return"";
+  }
+  else {
+    return "[ISC](https://opensource.org/licenses/ISC)";
+  }
+
+}
+
+
+
 
 // TODO: Create a function that returns the license section of README
 // If there is no license, return an empty string
@@ -25,7 +47,18 @@ function renderLicenseSection(license) {}
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
   const badge = renderLicenseBadge(data.license);
+  const link = renderLicenseLink(data.license);
   return `# ${data.title}
+
+  ## Table of Contents
+  - [Description](#description)
+  - [Installation](#installation)
+  - [Usage](#usage)
+  - [License](#license)
+  - [Collaboration](#collaboration)
+  - [Tests](#tests)
+  - [Questions](#questions)
+
 ${badge}
 ## Description
 ${data.description}
@@ -36,18 +69,23 @@ ${data.installation}
 ## Usage
 ${data.usage}
 
+
 ## License
-  ${badge}
+Link for license choosed\n
+${link}
 
-  ## Contribution
-  ${data.contribution}
+## Contribution
+Use this guidlines for collaboration
+${data.contribution}
 
-  ## Tests
-  ${data.tests}
+## Tests
+Test applications
+${data.tests}
 
-  ## Questions
-  [github](https://www.github.com/${data.github})
-  ${data.email}
+## Questions
+If you have any question you can reach me trough github or either you can email me Thanks.\n
+[github](https://www.github.com/${data.github})
+${data.email}
 
 
 
